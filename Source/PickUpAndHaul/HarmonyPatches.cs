@@ -49,7 +49,9 @@ namespace PickUpAndHaul
         {
             CompHauledToInventory takenToInventory = pawn.TryGetComp<CompHauledToInventory>();
             if (takenToInventory == null)
+            {
                 return true;
+            }
 
             HashSet<Thing> carriedThing = takenToInventory.GetHashSet();
 
@@ -60,7 +62,9 @@ namespace PickUpAndHaul
         {
             CompHauledToInventory takenToInventory = __instance.pawn.TryGetComp<CompHauledToInventory>();
             if (takenToInventory == null)
+            {
                 return;
+            }
 
             HashSet<Thing> carriedThing = takenToInventory.GetHashSet();
             if (carriedThing?.Count > 0)
@@ -76,14 +80,16 @@ namespace PickUpAndHaul
         {
             CompHauledToInventory takenToInventory = __instance.pawn.TryGetComp<CompHauledToInventory>();
             if (takenToInventory == null)
+            {
                 return;
+            }
 
             HashSet<Thing> carriedThing = takenToInventory.GetHashSet();
 
             if (__instance.job.haulMode == HaulMode.ToCellStorage
                 && __instance.pawn.Faction == Faction.OfPlayer
                 && __instance.pawn.RaceProps.Humanlike
-                && __instance.pawn.carryTracker.CarriedThing is Corpse == false
+                && (__instance.pawn.carryTracker.CarriedThing is Corpse) == false
                 && carriedThing != null
                 && carriedThing.Count != 0) //deliberate hauling job. Should unload.
             {
@@ -104,9 +110,9 @@ namespace PickUpAndHaul
         public static IEnumerable<CodeInstruction> FloatMenuMakerMad_AddHumanlikeOrders_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             MethodInfo playerHome = AccessTools.Property(typeof(Map), nameof(Map.IsPlayerHome)).GetGetMethod();
-            List<CodeInstruction> instructionList = instructions.ToList();
+            var instructionList = instructions.ToList();
 
-            bool patched = false;
+            var patched = false;
 
             foreach (CodeInstruction instruction in instructionList)
             {
@@ -131,7 +137,7 @@ namespace PickUpAndHaul
 
             MethodInfo ColorWhite = AccessTools.Property(typeof(Color), nameof(Color.white)).GetGetMethod();
 
-            bool done = false;
+            var done = false;
             foreach (CodeInstruction i in instructions)
             {
                 //// Color color = flag ? Color.grey : Color.white;
@@ -144,14 +150,19 @@ namespace PickUpAndHaul
                     done = true;
                 }
                 else
+                {
                     yield return i;
+                }
             }
         }
 
         private static Color GetColorForHauled(Pawn pawn, Thing thing)
         {
             if (pawn.GetComp<CompHauledToInventory>()?.GetHashSet().Contains(thing) ?? false)
+            {
                 return Color.Lerp(Color.grey, Color.red, 0.5f);
+            }
+
             return Color.white;
         }
     }

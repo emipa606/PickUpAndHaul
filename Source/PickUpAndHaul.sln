@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickUpAndHaul", "PickUpAndH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHoldMultipleThings", "IHoldMultipleThings\IHoldMultipleThings.csproj", "{E1536A54-D289-41FA-9D0B-8A2F6812C7FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickUpAndHaulv10", "PickUpAndHaulv1.0\PickUpAndHaulv10.csproj", "{2480F13E-E9ED-44EC-A5DE-C821676904E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHoldMultipleThingsv10", "IHoldMultipleThingsv1.0\IHoldMultipleThingsv10.csproj", "{0F7BA6C3-BF3C-42D5-9268-593B4AF8FC12}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

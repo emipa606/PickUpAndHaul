@@ -1,42 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Pick Up And Haul</name>
-	<author>Mehni</author>
-	<supportedVersions>
-		<li>1.0</li>
-		<li>1.1</li>
-	</supportedVersions>
-	<packageId>Mehni.PickUpAndHaul</packageId>
-	<modDependenciesByVersion>
-		<v1.1>
-			<li>
-				<packageId>brrainz.harmony</packageId>
-				<displayName>Harmony</displayName>
-				<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-				<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-			</li>
-		</v1.1>
-	</modDependenciesByVersion>
-	<url>https://ludeon.com/forums/index.php?topic=35832</url>
-	<description>"Greatest hauling mod ever" - Chicken Plucker
+  <name>Pick Up And Haul (Continued)</name>
+  <packageId>Mlie.PickUpAndHaul</packageId>
+  <author>Mehni</author>
+  <url>https://github.com/emipa606/PickUpAndHaul</url>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+    <li>1.2</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of Mehnis mod
+https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058
 
-	 v1.1.0⅓
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+
+[table]
+    [tr]
+        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+        [td][url=https://github.com/emipa606/PickUpAndHaul][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+[/table]
+	
+[img]https://i.imgur.com/NOW7jU1.png[/img]
+"Greatest hauling mod ever" - Chicken Plucker
 
 Colonists will gather stuff in their inventory, then haul it all to a stockpile.
 
-This hauling mod will greatly increase hauling efficiency, because pawns can now carry more than one gun or t-shirt. Those smart and intelligent colonists can use their inventory!
+This hauling mod will greatly increase hauling efficiency, because pawns can now carry more than one gun or t-shirt. Those smart and intelligent colonists can use their inventory! You gotta see it to believe it.
 
-Safe to add to existing games.
+[h1]Functionality:[/h1]
+If possible, colonists that can haul will haul stuff to their inventory, pick up one more item to haul to a stockpile and then unload their inventory. Colonists that have traveled far to haul something, will look further to haul other items to haul. This distance is dynamic, thanks to AlexTD.
 
-&lt;size=20&gt;Credits and thanks:&lt;/size&gt;
-- AlexTD, for his direct contributions
-- erdelf, Zorba, Why_is_that and Dingo for code and advice (yet again!)
+Colonists will unload themselves:
+- At semi-regular intervals, if their inventory contains multiple items.
+- When their inventory has reached a certain mass limit.
+- When they haul something else to a stockpile.
+- When they're idle.
+
+You can tell colonists to pick up an item and keep it in their inventory. They will remember what they have and keep it on their person. This is very practical for field doctoring, or for animal trainers taming herds of animals.
+
+Want field-doctoring to be even better? Use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1309994319]Smart Medicine[/url] by Uuugggg and doctors will automatically use the meds in their inventory.
+
+[h1]Limitations:[/h1]
+- Only player-owned humanlikes can use their inventory to haul. Rule of thumb: If you can order it to equip a gun or wear a pair of pants, it'll use their inventory to haul for you. No guests, animals pretending to be robots, dogs, prisoners, or whatever else.
+
+- The unloading isn't 100% perfect, but it's pretty darn close.
+
+[h1]Compatibility notes:[/h1]
+
+- Works great with AllowTool's Haul Urgently.
+
+[h1]FAQ:[/h1]
+ I cannot pick up a corpse it's too heavy! 
+- You need a storage stockpile configured to accept corpses. Make a dumping zone.
+
+[h1]Credits and thanks:[/h1]
+- [url=https://ko-fi.com/erdelf]erdelf[/url] - this mod would not be possible without him
+- [url=https://steamcommunity.com/id/uuugggg/myworkshopfiles/?appid=294100]AlexTD[/url] for many direct code contributions.
+- Zorba, Why_is_that and Dingo for code and advice
 - Chicken Plucker, for the preview image
 - Brrainz, for the amazing Harmony library
+- (Spdskatr) return false;
+- My patient testers. You know who you are.
+
+Come join us on discord. https://discord.gg/RimWorld
+
+[h1]Translations[/h1]
+- Spanish (Courtesy of sma145)
+- Russian (Courtesy of HanabishiRecca)
+
+[h1]Balance notes:[/h1]
+On the one hand this takes away a frustration of mine, but I can't deny that it won't make the game at least somewhat easier. You can bring back some of that challenge again with my other mods like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1147799676]Sun Tzu Raider Tactics[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1266884568]Climate Cycle ++[/url]. 
 
 Ludeon: https://ludeon.com/forums/index.php?topic=35832
-Steam: http://steamcommunity.com/sharedfiles/filedetails/?id=1279012058
 GitHub: https://github.com/Mehni/PickUpAndHaul/releases
+Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058
 
-	</description>
+If you like this mod, please considering buying me a coffee.
+[url=https://steamcommunity.com/linkfilter/?url=https://ko-fi.com/mehnicreates][img]https://i.imgur.com/QGcents.png[/img][/url]</description>
 </ModMetaData>

@@ -1,13 +1,13 @@
-﻿namespace PickUpAndHaul
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using RimWorld;
-    using UnityEngine;
-    using Verse;
-    using Verse.AI;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.AI;
 
+namespace PickUpAndHaul
+{
     public class JobDriver_HaulToInventory : JobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -31,18 +31,15 @@
             //honestly the workgiver checks for encumbered, so until CE checks are in this is unnecessary
             //yield return CheckForOverencumbered();//Probably redundant without CE checks
 
-            Toil gotoThing = new Toil
+            var gotoThing = new Toil
             {
-                initAction = () =>
-                {
-                    pawn.pather.StartPath(TargetThingA, PathEndMode.ClosestTouch);
-                },
+                initAction = () => pawn.pather.StartPath(TargetThingA, PathEndMode.ClosestTouch),
                 defaultCompleteMode = ToilCompleteMode.PatherArrival
             };
             gotoThing.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             yield return gotoThing;
 
-            Toil takeThing = new Toil
+            var takeThing = new Toil
             {
                 initAction = () =>
                 {
@@ -51,7 +48,7 @@
                     Toils_Haul.ErrorCheckForCarry(actor, thing);
 
                     //get max we can pick up
-                    int countToPickUp = Mathf.Min(job.count, MassUtility.CountToPickUpUntilOverEncumbered(actor, thing));
+                    var countToPickUp = Mathf.Min(job.count, MassUtility.CountToPickUpUntilOverEncumbered(actor, thing));
                     Log.Message($"{actor} is hauling to inventory {thing}:{countToPickUp}");
 
                     // yo dawg, I heard you like delegates so I put delegates in your delegate, so you can delegate your delegates.
@@ -72,7 +69,7 @@
                     if (countToPickUp > 0)
                     {
                         Thing splitThing = thing.SplitOff(countToPickUp);
-                        bool shouldMerge = takenToInventory.GetHashSet().Any(x => x.def == thing.def);
+                        var shouldMerge = takenToInventory.GetHashSet().Any(x => x.def == thing.def);
                         actor.inventory.GetDirectlyHeldThings().TryAdd(splitThing, shouldMerge);
                         takenToInventory.RegisterHauledItem(splitThing);
 
@@ -114,7 +111,7 @@
                 initAction = () =>
                 {
                     List<Thing> haulables = pawn.Map.listerHaulables.ThingsPotentiallyNeedingHauling();
-                    WorkGiver_HaulToInventory haulMoreWork = DefDatabase<WorkGiverDef>.AllDefsListForReading.First(wg => wg.Worker is WorkGiver_HaulToInventory).Worker as WorkGiver_HaulToInventory;
+                    var haulMoreWork = DefDatabase<WorkGiverDef>.AllDefsListForReading.First(wg => wg.Worker is WorkGiver_HaulToInventory).Worker as WorkGiver_HaulToInventory;
                     Thing haulMoreThing = GenClosest.ClosestThing_Global(pawn.Position, haulables, 12, t => haulMoreWork.HasJobOnThing(pawn, t));
 
                     //WorkGiver_HaulToInventory found more work nearby
@@ -159,7 +156,7 @@
 
         public Toil CheckForOverencumbered()
         {
-            Toil toil = new Toil();
+            var toil = new Toil();
             toil.initAction = delegate
             {
                 Pawn actor = toil.actor;

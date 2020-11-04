@@ -1,8 +1,8 @@
-﻿namespace PickUpAndHaul
-{
-    using System.Collections.Generic;
-    using Verse;
+﻿using System.Collections.Generic;
+using Verse;
 
+namespace PickUpAndHaul
+{
     public class CompHauledToInventory : ThingComp
     {
         private HashSet<Thing> takenToInventory = new HashSet<Thing>();

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <WorkGiverDef>
     <defName>HaulToInventory</defName>
     <label>stuff things in inventory and haul</label>
@@ -13,23 +12,18 @@
       <li>Manipulation</li>
     </requiredCapacities>
   </WorkGiverDef>
-  
   <JobDef>
     <defName>HaulToInventory</defName>
     <driverClass>PickUpAndHaul.JobDriver_HaulToInventory</driverClass>
     <reportString>gathering TargetA to hauling inventory.</reportString>
-	<casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>false</casualInterruptible>
     <suspendable>false</suspendable>
   </JobDef>
-  
   <JobDef>
     <defName>UnloadYourHauledInventory</defName>
     <driverClass>PickUpAndHaul.JobDriver_UnloadYourHauledInventory</driverClass>
     <reportString>unloading inventory.</reportString>
-	<casualInterruptible>false</casualInterruptible>
+    <casualInterruptible>false</casualInterruptible>
     <suspendable>false</suspendable>
   </JobDef>
-  
-
-	
 </Defs>

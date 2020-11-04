@@ -19,7 +19,9 @@ namespace PickUpAndHaul
         }
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
-            => true;
+        {
+            return true;
+        }
 
         /// <summary>
         /// Find spot, reserve spot, pull thing out of inventory, go to spot, drop stuff, repeat.
@@ -31,20 +33,24 @@ namespace PickUpAndHaul
             HashSet<Thing> carriedThing = takenToInventory.GetHashSet();
 
             if (ModCompatibilityCheck.ExtendedStorageIsActive)
+            {
                 unloadDuration = 20;
+            }
 
             Toil wait = Toils_General.Wait(unloadDuration);
             Toil celebrate = Toils_General.Wait(unloadDuration);
 
             yield return wait;
-            Toil findSpot = new Toil
+            var findSpot = new Toil
             {
                 initAction = () =>
                 {
                     ThingCount unloadableThing = FirstUnloadableThing(pawn);
 
                     if (unloadableThing.Count == 0 && carriedThing.Count == 0)
+                    {
                         EndJobWith(JobCondition.Succeeded);
+                    }
 
                     if (unloadableThing.Count != 0)
                     {
@@ -114,13 +120,15 @@ namespace PickUpAndHaul
 
             //If the original cell is full, PlaceHauledThingInCell will set a different TargetIndex resulting in errors on yield return Toils_Reserve.Release.
             //We still gotta release though, mostly because of Extended Storage.
-            Toil releaseReservation = new Toil
+            var releaseReservation = new Toil
             {
                 initAction = () =>
                 {
                     if (pawn.Map.reservationManager.ReservedBy(job.targetB, pawn, pawn.CurJob)
                      && !ModCompatibilityCheck.HCSKIsActive)
+                    {
                         pawn.Map.reservationManager.Release(job.targetB, pawn, pawn.CurJob);
+                    }
                 }
             };
             yield return releaseReservation;
@@ -154,7 +162,9 @@ namespace PickUpAndHaul
                     carriedThings.Remove(thing);
 
                     foreach (Thing dirtyStraggler in dirtyStragglers)
+                    {
                         return new ThingCount(dirtyStraggler, dirtyStraggler.stackCount);
+                    }
                 }
                 return new ThingCount(thing, thing.stackCount);
             }
