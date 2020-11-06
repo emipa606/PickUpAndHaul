@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HaulToInventory.reportString>인벤토리에 보관할 TargetA를 수집중</HaulToInventory.reportString>
+  <UnloadYourHauledInventory.reportString>물품을 놓는중</UnloadYourHauledInventory.reportString>
+</LanguageData>

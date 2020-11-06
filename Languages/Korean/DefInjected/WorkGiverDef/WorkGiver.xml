@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HaulToInventory.label>재고 채우기 및 물건 운반</HaulToInventory.label>
+  <HaulToInventory.verb>적재</HaulToInventory.verb>
+  <HaulToInventory.gerund>재고 채우기</HaulToInventory.gerund>
+</LanguageData>
