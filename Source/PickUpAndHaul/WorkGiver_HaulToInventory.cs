@@ -17,18 +17,18 @@ namespace PickUpAndHaul
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
             return base.ShouldSkip(pawn, forced)
-|| pawn.Faction != Faction.OfPlayer
-|| !pawn.RaceProps.Humanlike
-|| pawn.TryGetComp<CompHauledToInventory>() == null;
+                    || pawn.Faction != Faction.OfPlayer
+                    || !pawn.RaceProps.Humanlike
+                    || pawn.TryGetComp<CompHauledToInventory>() == null;
         }
 
         public static bool GoodThingToHaul(Thing t, Pawn pawn)
         {
             return t.Spawned
-&& !t.IsInValidBestStorage()
-&& !t.IsForbidden(pawn)
-&& !(t is Corpse)
-&& pawn.CanReserve(t);
+                    && !t.IsInValidBestStorage()
+                    && !t.IsForbidden(pawn)
+                    && !(t is Corpse)
+                    && pawn.CanReserve(t);
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing thing, bool forced = false)
