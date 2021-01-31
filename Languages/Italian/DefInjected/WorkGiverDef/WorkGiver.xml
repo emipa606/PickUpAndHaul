@@ -3,7 +3,7 @@
 
   <HaulToInventory.label>carica la roba nell'inventario e trasportala</HaulToInventory.label>
   <HaulToInventory.verb>trasporta</HaulToInventory.verb>
-  <HaulToInventory.gerund>trasportando</HaulToInventory.gerund>
+  <HaulToInventory.gerund>carica</HaulToInventory.gerund>
 
 
 </LanguageData>
