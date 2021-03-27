@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HaulToInventory.label>Colocar coisas no inventário e transportar</HaulToInventory.label>
+  <HaulToInventory.verb>Transportar</HaulToInventory.verb>
+  <HaulToInventory.gerund>Transportando</HaulToInventory.gerund>
+</LanguageData>

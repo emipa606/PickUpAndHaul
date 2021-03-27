@@ -29,6 +29,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058
 - Added chinese translation, thanks 烨灬!
 - Savegame compatible
 - Added German translation, thanks Prism!
+- Added PortugueseBrazilian translation, thanks Edu!
 
 [img]https://i.imgur.com/7Gzt3Rg.png[/img]
 
@@ -89,5 +90,16 @@ Want field-doctoring to be even better? Use [url=https://steamcommunity.com/shar
 On the one hand this takes away a frustration of mine, but I can't deny that it won't make the game at least somewhat easier. You can bring back some of that challenge again with my other mods like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1147799676]Sun Tzu Raider Tactics[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2024296023]Climate Cycle ++[/url]. 
 
 Ludeon: https://ludeon.com/forums/index.php?topic=35832
+
+[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]
 </description>
 </ModMetaData>
+
